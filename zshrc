@@ -137,3 +137,6 @@ alias gr="git checkout main; git pull; git checkout -; git rebase origin/main;"
 alias gs="git status;"
 alias grc="git add -u; git rebase --continue"
 alias gc="git checkout "
+
+# SGNL
+alias testall="dev/check-gen.sh && bazel build //... && bazel test //..."
