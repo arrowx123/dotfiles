@@ -133,7 +133,8 @@ alias t=tmux
 
 # git
 alias gaa="git add -u; git commit --am --no-edit; git push -f"
-alias gr="git checkout main; git pull; git checkout -; git rebase origin/main;"
+alias gr="git rebase "
+alias grr="git checkout main; git pull; git checkout -; git rebase origin/main;"
 alias gs="git status;"
 alias grc="git add -u; git rebase --continue"
 alias gc="git checkout "
