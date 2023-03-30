@@ -115,15 +115,13 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code.
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
-# key mapping
-# right command to esc
-# esc to tilde
-hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x7000000e6,"HIDKeyboardModifierMappingDst":0x700000029}, {"HIDKeyboardModifierMappingSrc":0x700000029,"HIDKeyboardModifierMappingDst":0x700000035}, {"HIDKeyboardModifierMappingSrc":0x7000000E4,"HIDKeyboardModifierMappingDst":1095216660483}]}' > /dev/null 2>&1
+# https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x/46460200#46460200
+# map e6 (right alt) to 29 (escap)
+# map 29 (right alt) to 35 (tilde)
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x7000000e6,"HIDKeyboardModifierMappingDst":0x700000029}, {"HIDKeyboardModifierMappingSrc":0x700000029,"HIDKeyboardModifierMappingDst":0x700000035}]}' > /dev/null 2>&1
 
 # press and hold will repeat the character
 defaults write -g ApplePressAndHoldEnabled -bool false
-
-source /Users/grey/.config/broot/launcher/bash/br
 
 # Use Vim simulation for CLI
 # bindkey -v
@@ -136,8 +134,5 @@ alias gaa="git add -u; git commit --am --no-edit; git push -f"
 alias gr="git rebase "
 alias grr="git checkout main; git pull; git checkout -; git rebase origin/main;"
 alias gs="git status;"
-alias grc="git add -u; git rebase --continue"
+alias grc="git add -u; GIT_EDITOR=true; git rebase --continue"
 alias gc="git checkout "
-
-# SGNL
-alias testall="dev/check-gen.sh && bazel build //... && bazel test //..."
