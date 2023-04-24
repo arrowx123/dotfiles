@@ -104,9 +104,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Autojump
-[[ -s /Users/grey/.autojump/etc/profile.d/autojump.sh ]] && source /Users/grey/.autojump/etc/profile.d/autojump.sh
+[[ -s /Users/greyyin/.autojump/etc/profile.d/autojump.sh ]] && source /Users/greyyin/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
+
+# the following command needs to be executed once
+# sudo ln -s $(which python3) /opt/homebrew/bin/python
 
 
 # Disable automatic periods with a double space:
