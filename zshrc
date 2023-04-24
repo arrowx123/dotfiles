@@ -112,6 +112,7 @@ autoload -U compinit && compinit -u
 # sudo ln -s $(which python3) /opt/homebrew/bin/python
 
 
+# https://gist.github.com/ryanpcmcquen/b2e608311f286a4ab3e1#file-osx-L12-L16
 # Disable automatic periods with a double space:
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
