@@ -140,3 +140,7 @@ alias grr="git checkout main; git pull; git checkout -; git rebase origin/main;"
 alias gs="git status;"
 alias grc="git add -u; GIT_EDITOR=true; git rebase --continue"
 alias gc="git checkout "
+
+
+# the following command needs to be executed once
+# ln -s ~/github/dotfiles/zshrc ~/.zshrc
